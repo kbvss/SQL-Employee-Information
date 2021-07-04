@@ -65,6 +65,11 @@ FROM employees.salaries
 WHERE emp_no <= 60000;
 
 
+/*Show employee number, their name and when they were hired */
+SELECT emp_no, first_name, last_name, hire_date
+FROM employees.employees
+
+
 
 /*Show employee number, their name and who were hired before the year 2000*/
 SELECT emp_no, first_name, last_name, hire_date
