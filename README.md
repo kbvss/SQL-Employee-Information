@@ -1,2 +1,2 @@
-# PortfolioProjects
-This repository holds the code and queries for each project I create
+# SQL Employyee Information
+This repository holds the code and queries for this project
