@@ -1,0 +1,27 @@
+/*Join Queries*/
+
+
+/*Show the names of each department manager*/
+/*dm is the alias for dept_manager*/
+SELECT dm.emp_no, 
+	   dm.dept_no, 
+       employees.departments.dept_name, 
+       employees.employees.first_name,
+       employees.employees.last_name
+   FROM employees.dept_manager dm
+   JOIN employees.departments ON dm.dept_no = employees.departments.dept_no
+   JOIN employees.employees ON dm.emp_no = employees.employees.emp_no;
+
+
+/* Show the employee salaries*/
+SELECT employees.first_name,
+	   employees.last_name,
+       employees.employees.emp_no,
+       employees.salaries.salary
+FROM   employees.employees
+JOIN   employees.salaries ON employees.emp_no = employees.employees.emp_no;
+
+
+
+
+
