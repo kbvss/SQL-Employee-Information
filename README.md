@@ -1,15 +1,6 @@
 # SQL Employyee Information Database 
 This repository holds the code and queries for this project
 
-# Employee data base
-This repository was migrated from [Launchpad](https://launchpad.net/test-db).
-See usage in the [MySQL docs](https://dev.mysql.com/doc/employee/en/index.html)
-
-# Where it comes from
-The original data was created by Fusheng Wang and Carlo Zaniolo at 
-Siemens Corporate Research. The data is in XML format.
-http://timecenter.cs.aau.dk/software.htm
-
 # As part of this project I ran queries to explore the data using SELECT, FROM, WHERE and JOIN statments
 
 Show the top 3 rows of the data
@@ -62,8 +53,6 @@ SELECT dm.emp_no,
    FROM employees.dept_manager dm
    JOIN employees.departments ON dm.dept_no = employees.departments.dept_no
    JOIN employees.employees ON dm.emp_no = employees.employees.emp_no;
-
-
 
 ![Daprtment Manager Names](https://github.com/kbvss/SQL-Employyee-Information/blob/main/Join%201%20for%20manager.PNG?raw=true)
 
