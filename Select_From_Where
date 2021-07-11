@@ -1,3 +1,5 @@
+/*Shows the quereies for the readme file*/
+
 /*Show first 3 rows of employee information*/
 SELECT *
 FROM employees.employees
