@@ -10,7 +10,7 @@ The original data was created by Fusheng Wang and Carlo Zaniolo at
 Siemens Corporate Research. The data is in XML format.
 http://timecenter.cs.aau.dk/software.htm
 
-# As part of this project I ran queries to explore the data using SELECT, FROM, WHERE statments
+# As part of this project I ran queries to explore the data using SELECT, FROM, WHERE and JOIN statments
 
 Show the top 3 rows of the data
 
@@ -40,5 +40,47 @@ SELECT Distinct title
 FROM employees.titles
 
 ![Departments](https://github.com/kbvss/SQL-Employyee-Information/blob/main/Job%20Titles.PNG?raw=true)
+
+Showing a list of mployees hired before the year 2000
+
+SELECT emp_no, first_name, last_name, hire_date
+FROM employees.employees
+WHERE hire_date >= 12-31-1999
+
+
+![Departments](https://github.com/kbvss/SQL-Employyee-Information/blob/main/Hired%20before%202000.PNG?raw=true)
+
+
+Showing the department manager names
+
+SELECT dm.emp_no, 
+	   dm.dept_no, 
+       employees.departments.dept_name, 
+       /*employees.employees.emp_no,*/
+	   employees.employees.first_name,
+       employees.employees.last_name
+   FROM employees.dept_manager dm
+   JOIN employees.departments ON dm.dept_no = employees.departments.dept_no
+   JOIN employees.employees ON dm.emp_no = employees.employees.emp_no;
+
+
+
+![Daprtment Manager Names](https://github.com/kbvss/SQL-Employyee-Information/blob/main/Join%201%20for%20manager.PNG?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
