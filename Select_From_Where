@@ -1,4 +1,8 @@
-/*SELECT FROM WHERE Queries*/
+/*Show first 3 rows of employee information*/
+SELECT *
+FROM employees.employees
+LIMIT 3;
+
 
 /*Show employee information*/
 SELECT * 
@@ -6,69 +10,19 @@ FROM employees.employees;
 
 
 /*How many employees currently work here*/
-SELECT COUNT(emp_no)
+SELECT COUNT(emp_no) as Total_Employees
 FROM employees.employees;
 
 
 /* Show departments*/
 SELECT *
 FROM Employees.departments
-
-
-/* Show employee titles*/
-SELECT *
-FROM employees.titles
+ORDER BY dept_no asc;
 
 
 /* Show employee titles with no duplicates*/
 SELECT Distinct title
 FROM employees.titles
-
-
-/*How many of each employee make up each title?*/
-SELECT COUNT(title)
-FROM employees.titles
-
-
-/*How many each employee make up each title? break it down by each title*/
-SELECT COUNT(title)
-FROM employees.titles
-WHERE title = "staff"
-
-
-SELECT COUNT(title)
-FROM employees.titles
-WHERE title =  "Senior Engineer"
-
-
-/*Show salaries from lowest to highest*/
-SELECT salary
-FROM employees.salaries
-ORDER BY salary ASC;
-
-
-/*Show first 3 rows of employee information*/
-SELECT *
-FROM employees.employees
-LIMIT 3;
-
-
-/*Select employee 10006*/
-SELECT * 
-FROM employees.salaries
-WHERE emp_no = 10006
-
-
-/*Show employees who have salaries $60,000 and above*/
-SELECT * 
-FROM employees.salaries
-WHERE emp_no <= 60000;
-
-
-/*Show employee number, their name and when they were hired */
-SELECT emp_no, first_name, last_name, hire_date
-FROM employees.employees
-
 
 
 /*Show employee number, their name and who were hired before the year 2000*/
@@ -77,12 +31,13 @@ FROM employees.employees
 WHERE hire_date >= 12-31-1999
 
 
-/*Which employees are in which department*/
-SELECT departments.dept_name, employees.first_name, employees.last_name
-FROM employees.employees,
-	 employees.departments
-
-
-
-
-
+/* Names of department managers*/
+SELECT dm.emp_no, 
+	   dm.dept_no, 
+       employees.departments.dept_name, 
+       /*employees.employees.emp_no,*/
+	   employees.employees.first_name,
+       employees.employees.last_name
+   FROM employees.dept_manager dm
+   JOIN employees.departments ON dm.dept_no = employees.departments.dept_no
+   JOIN employees.employees ON dm.emp_no = employees.employees.emp_no;
