@@ -25,8 +25,9 @@ Which departments does this company consist of?
 	ORDER BY dept_no asc;
 
 ![Departments](https://github.com/kbvss/SQL-Employyee-Information/blob/main/Departments.PNG?raw=true)
-
+	
 What titles can employees have?
+
 	SELECT Distinct title
 	FROM employees.titles
 
