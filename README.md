@@ -1,4 +1,4 @@
-# SQL Employyee Information Database 
+# SQL Employee Information Database 
 This repository holds the code and queries for this project
 
 # I ran queries to explore the data using SELECT, FROM, WHERE and JOIN statements
