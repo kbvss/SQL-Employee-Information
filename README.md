@@ -32,7 +32,7 @@ What titles can employees have?
 
 ![Departments](https://github.com/kbvss/SQL-Employyee-Information/blob/main/Job%20Titles.PNG?raw=true)
 
-Showing a list of mployees hired before the year 2000
+Listing employees hired before the year 2000
 
 	SELECT emp_no, first_name, last_name, hire_date
 	FROM employees.employees
